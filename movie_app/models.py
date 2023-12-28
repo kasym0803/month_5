@@ -12,7 +12,7 @@ class Movie(models.Model):
     director = models.ForeignKey(Director, on_delete=models.CASCADE, null=True, blank=True, related_name='movies')
 
 
-STARTS = ((i, '*' * i) for i in range(1, 6))
+STARTS = ((i, * i) for i in range(1, 6))
 class Review(models.Model):
     text = models.CharField(max_length=156)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, null=True, blank=True, related_name='reviews')
