@@ -70,6 +70,7 @@ def movie_view_id(request, id):
         movie.description = serializer.validated_data.get('description')
         movie.duration = serializer.validated_data.get('duration')
         movie.director_id = serializer.validated_data.get('director_id')
+        movie.save()
         return Response(data=MovieSerializer(movie).data)
     elif request.method == 'DELETE':
         movie.delete()
@@ -114,6 +115,7 @@ def review_view_id(request, id):
         review.text = request.data.get('text')
         review.movie_id = request.data.get('movie_id')
         review.stars = request.data.get('stars')
+        review.save()
         return Response(data=ReviewSerializer(review).data)
     elif request.method == 'DELETE':
         review.delete()
