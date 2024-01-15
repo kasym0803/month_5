@@ -7,8 +7,8 @@ from users.models import Confirm
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'password',)
-        extra_fields = {'password: {write_only: True'}
+        fields = ('id', 'username', 'password',)
+        extra_fields = {'password': {'write_only': True}}
 
 
 class LoginSerializer(serializers.Serializer):
